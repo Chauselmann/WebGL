@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Web GL Charlie Hauselmann</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body onload='main()'>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 pl-0 pr-0">
+            <canvas id='dawin-webgl'>
+                Utilisez un navigateur compatible avec WebGL.
+            </canvas>
+        </div>
+        <div class="col-md-2 settings-col d-none d-md-block">
+            <h2 class="text-center mt-4 mb-4">SETTINGS</h2>
+
+            <h5>Translation</h5>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="translationX">tx</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="translationX" value="0" min="-10" max="10" step="0.1" id="inputTranslationX">
+                </div>
+            </div>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="translationY">ty</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="translationY" value="0" min="-10" max="10" step="0.1" id="inputTranslationY">
+                </div>
+            </div>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="translationZ">tz</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="translationY" value="0" min="-10" max="10" step="0.1" id="inputTranslationZ">
+                </div>
+            </div>
+
+            <h5>Rotation</h5>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="rotationX">rx</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="rotationX" value="0" min="-3.14" max="3.14" step="0.01" id="inputRotationX">
+                </div>
+            </div>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="rotationY">ry</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="rotationY" value="0" min="-3.14" max="3.14" step="0.01" id="inputRotationY">
+                </div>
+            </div>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-2" for="rotationZ">rz</label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range slider" name="rotationZ" value="0" min="-3.14" max="3.14" step="0.01" id="inputRotationZ">
+                </div>
+            </div>
+
+            <h5>Camera</h5>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-5" for="zoom">zoom</label>
+                <div class="col-sm-7">
+                    <input type="range" class="form-control-range slider" name="zoom" value="1" min="0.1" max="5" step="0.1" id="inputZoom">
+                </div>
+            </div>
+
+            <div class="form-group row align-items-center">
+                <label class="col-sm-5" for="perspective">perspective</label>
+                <div class="col-sm-7">
+                    <input type="range" class="form-control-range slider" name="perspective" value="75" min="30" max="120" step="1" id="inputPerspective">
+                </div>
+            </div>
+
+            <h5>Color</h5>
+            <div class="mb-4" id="colorPicker"></div>
+        </div>
+    </div>
+</div>
+
+<script src='assets/js/gl-matrix-min.js'></script>
+<script src='assets/js/iro.min.js'></script>
+<script src='assets/js/main.js'></script>
+<script src='assets/js/jquery.min.js'></script>
+</body>
+</html>
